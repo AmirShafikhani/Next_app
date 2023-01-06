@@ -9,3 +9,7 @@ const Shop = () => {
 };
 
 export default Shop;
+
+export const getStaticProps = async () => {
+    
+}
