@@ -1,6 +1,10 @@
+import Link from "next/link"
+
 const Home = () => {
   return (
-    <div>slam</div>
+    <div>
+      <Link href="/shop">Go to shop</Link>
+    </div>
   )
 }
 
