@@ -1,13 +1,20 @@
 import axios from "axios";
+import { useRouter } from "next/router";
 import React from "react";
 
 const ProductDetails = ({ productData }) => {
-  const { title, description, price } = productData;
+  const router = useRouter();
   return (
     <>
-      <h2>{title}</h2>
-      <h2>{description}</h2>
-      <h2>{price}</h2>
+      {router.isFallback ? (
+        <div>Loading ...</div>
+      ) : (
+        <>
+          <h2>{productData?.title}</h2>
+          <h2>{productData?.description}</h2>
+          <h2>{productData?.price}</h2>
+        </>
+      )}
     </>
   );
 };
@@ -35,5 +42,6 @@ export const getStaticProps = async (context) => {
     props: {
       productData: data,
     },
+    revalidate: 400,
   };
 };
