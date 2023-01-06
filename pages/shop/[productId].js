@@ -25,6 +25,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
+  // Dynamic SSG
   const { params } = context;
   const { data } = await axios.get(
     `https://fakestoreapi.com/products/${params.productId}`
