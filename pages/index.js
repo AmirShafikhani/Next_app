@@ -15,7 +15,8 @@ const Home = () => {
           <Link href="/posts">Go to posts page</Link>
           <Link href="/locations">Go to locations page</Link>
           <Link href="/characters">Go to characters page</Link>
-          <Link className={(e) => `${console.log(e)} bg-yellow`} href="/secure-page">Go to client side secured page</Link>
+          <Link href="/secure-page">Go to client side secured page</Link>
+          <Link href="/server-secure-page">Go to server side secured page</Link>
 
           {data ? (
             <button onClick={() => signOut()}>sign out</button>
