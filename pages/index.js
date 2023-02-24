@@ -17,12 +17,9 @@ const Home = () => {
           <Link href="/characters">Go to characters page</Link>
           <Link href="/secure-page">Go to client side secured page</Link>
           <Link href="/server-secure-page">Go to server side secured page</Link>
+          <Link href="/login">Go to login page</Link>
 
-          {data ? (
-            <button onClick={() => signOut()}>sign out</button>
-          ) : (
-            <button onClick={() => signIn()}>Sign in</button>
-          )}
+          {data ? <button onClick={() => signOut()}>sign out</button> : <button onClick={() => signIn()}>Sign in</button>}
         </div>
       )}
     </>
