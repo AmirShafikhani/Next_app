@@ -1,12 +1,13 @@
-import { TextField } from "@mui/material";
-import React from "react";
+import CustomFade from "../components/CustomFade";
 
 const Test = () => {
   return (
-    <div className="m-12 bg-red-500 h-[150px] centering p-12">
-      <div className="bg-yellow-500 p-0 ">
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" className="mb-6" />
-      </div>
+    <div className="flex flex-col gap-12 [&>*]:bg-sky-500 [&>*]:p-12">
+      {new Array(30).fill("").map((item, index) => (
+        <CustomFade key={index}>
+          <div className="">{index + 1}</div>
+        </CustomFade>
+      ))}
     </div>
   );
 };

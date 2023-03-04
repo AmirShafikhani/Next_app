@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,5 +16,14 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@layer components {
+  .fade-out {
+    @apply opacity-0 invisible translate-y-3;
+  }
+  .fade-in {
+    @apply !visible !opacity-100 !translate-y-0 !transition !duration-[400ms];
   }
 }

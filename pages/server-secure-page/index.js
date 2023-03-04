@@ -1,5 +1,4 @@
 import { getSession, signIn, useSession } from "next-auth/react";
-import Link from "next/link";
 import React from "react";
 
 // Server side securing pages using next auth
