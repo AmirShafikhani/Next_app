@@ -3,15 +3,13 @@ import React, { useState } from "react";
 import * as Yup from "yup";
 
 const LoginForm = () => {
-  const initialValues = {
+  const [initialValues, setInitialValues] = useState({
     name: "",
     email: "",
     gender: "",
     password: "",
     passwordConfirm: "",
-  };
-
-  const [backendData, setBackendData] = useState(null);
+  });
 
   const onSubmit = (values) => {
     console.log(values);
@@ -19,7 +17,7 @@ const LoginForm = () => {
 
   const updateData = (e) => {
     e.preventDefault();
-    setBackendData({
+    setInitialValues({
       name: "test",
       email: "test@gmail.com",
       gender: "0",
@@ -32,6 +30,7 @@ const LoginForm = () => {
     name: Yup.string("name must be a string")
       .required("name is a required property")
       .min(6, "name must be at least contains 6 characters")
+
       .max(30, "name must be at most 30 characters"),
     email: Yup.string("email must be a string").email("please enter a valid email").required("email is a required property"),
     password: Yup.string("name must be a string").required("password is a required property"),
@@ -42,8 +41,8 @@ const LoginForm = () => {
   });
 
   const formik = useFormik({
-    initialValues: backendData || initialValues,
     onSubmit,
+    initialValues,
     validationSchema,
     validateOnMount: true,
     enableReinitialize: true,
